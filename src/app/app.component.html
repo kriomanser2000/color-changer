@@ -1,6 +1,21 @@
 <div [ngStyle]="{'background-color': backgroundColor, 'color': textColor}">
   <p>Текст змінює колір</p>
-  <button (click)="changeColor('red', 'white')">Червоний фон, білий текст</button>
-  <button (click)="changeColor('blue', 'yellow')">Синій фон, жовтий текст</button>
-  <button (click)="changeColor('green', 'black')">Зелений фон, чорний текст</button>
+  <app-color-button 
+    [bgColor]="'red'" 
+    [txtColor]="'white'" 
+    (colorChange)="changeColor($event)">
+    Червоний фон, білий текст
+  </app-color-button>
+  <app-color-button 
+    [bgColor]="'green'" 
+    [txtColor]="'black'" 
+    (colorChange)="changeColor($event)">
+    Зелений фон, чорний текст
+  </app-color-button>
+  <app-color-button 
+    [bgColor]="'yellow'" 
+    [txtColor]="'blue'" 
+    (colorChange)="changeColor($event)">
+    Жовтий фон, синій текст
+  </app-color-button>
 </div>
